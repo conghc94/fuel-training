@@ -27,9 +27,28 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">My Site</a>
+				<a class="navbar-brand" href="#">New site 1</a>
 			</div>
 			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="<?php echo Uri::segment(2) == '' ? 'active' : '' ?>">
+						<?php echo Html::anchor('admin', 'Dashboard') ?>
+					</li>
+
+					<?php
+						$files = new GlobIterator(APPPATH.'classes/controller/admin/*.php');
+						foreach($files as $file)
+						{
+							$section_segment = $file->getBasename('.php');
+							$section_title = Inflector::humanize($section_segment);
+							?>
+							<li class="<?php echo Uri::segment(2) == $section_segment ? 'active' : '' ?>">
+								<?php echo Html::anchor('admin/'.$section_segment, $section_title) ?>
+							</li>
+							<?php
+						}
+					?>
+				</ul>
 				<ul class="nav navbar-nav pull-right">
 					<li class="dropdown">
 						<a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo $current_user->username ?> <b class="caret"></b></a>
