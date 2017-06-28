@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $title; ?></title>
-	<?php echo Asset::css('bootstrap.css'); ?>
+	<?php echo Asset::css('bootstrap.min.css'); ?>
+	<?php echo Asset::css('material-dashboard.css'); ?>
 	<style>
 		body { margin: 50px; }
 	</style>

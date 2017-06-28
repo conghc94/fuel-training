@@ -1,4 +1,5 @@
-<div class="row">
+<div class="row" style="background-image:url('../assets/img/bgimage.jpg')">
+	<h1>Welcome!</h1>
 	<div class="col-md-3">
 		<?php echo Form::open(array()); ?>
 
@@ -30,6 +31,10 @@
 
 			<div class="actions">
 				<?php echo Form::submit(array('value'=>'Login', 'name'=>'submit', 'class' => 'btn btn-lg btn-primary btn-block')); ?>
+			</div>
+
+			<div class="form-group" style="padding-left: 50px;">
+				<a href="">Create new account</a>
 			</div>
 
 		<?php echo Form::close(); ?>
