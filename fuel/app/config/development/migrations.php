@@ -7,6 +7,9 @@ return array (
       'default' => 
       array (
         0 => '001_create_pages',
+        1 => '002_add_image_to_users',
+        2 => '003_add_name_to_users',
+        3 => '004_create_monthly_point_rankings',
       ),
     ),
     'module' => 
