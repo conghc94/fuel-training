@@ -17,7 +17,6 @@
 	</script>
 </head>
 <body>
-
 	<?php if ($current_user): ?>
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
@@ -61,6 +60,27 @@
 		</div>
 	</div>
 	<?php endif; ?>
+
+	<div class="logo">
+	    <a href="https://www.creative-tim.com" class="simple-text">
+	        <div class="logo-img">
+	            <img src="/assets/img/angular2-logo-red.png"/>
+	        </div>
+	        Creative Tim
+	    </a>
+	</div>
+	<div class="sidebar-wrapper">
+	    <div class="nav-container">
+	        <ul class="nav">
+	            <li>
+	                <a>
+	                    <i class="material-icons">new menu</i>
+	                    <p>new menu</p>
+	                </a>
+	            </li>
+	        </ul>
+	    </div>
+	</div>
 
 	<div class="container">
 		<div class="row">
