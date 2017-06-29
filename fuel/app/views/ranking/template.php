@@ -61,28 +61,56 @@
 	</div>
 	<?php endif; ?>
 
-	<div class="logo">
-	    <a href="https://www.creative-tim.com" class="simple-text">
+	<div class="container">
+
+	<div class="sidebar" data-color="red" data-image="">
+        <div class="logo">
+	    <a class="simple-text" href="https://www.creative-tim.com">
 	        <div class="logo-img">
-	            <img src="/assets/img/angular2-logo-red.png"/>
+	            <img src="/assets/img/angular2-logo-red.png">
 	        </div>
-	        Creative Tim
+	        
 	    </a>
 	</div>
 	<div class="sidebar-wrapper">
 	    <div class="nav-container">
 	        <ul class="nav">
-	            <li>
-	                <a>
-	                    <i class="material-icons">new menu</i>
-	                    <p>new menu</p>
+	           	<li class="active">
+	                <a href="#/dashboard">
+	                    <p>Dashboard</p>
+	                </a>
+	            </li><li class="">
+	                <a href="#/user">
+	                    <p>User Profile</p>
+	                </a>
+	            </li><li   class="">
+	                <a href="#/typography">
+	                    <p>Typography</p>
+	                </a>
+	            </li><li   class="">
+	                <a href="#/icons">
+	                    <p>Icons</p>
+	                </a>
+	            </li><li   class="">
+	                <a href="#/maps">
+	                    <p>Maps</p>
+	                </a>
+	            </li><li   class="">
+	                <a href="#/notifications">
+	                    <p>Notifications</p>
+	                </a>
+	            </li><li   class="active-pro">
+	                <a href="#/upgrade">
+	                    <p>Upgrade to PRO</p>
 	                </a>
 	            </li>
 	        </ul>
-	    </div>
+	    <div class="moving-tab" style="width: 230px; transform: translate3d(0px, 20px, 0px); transition: all 0.5s cubic-bezier(0.29, 1.42, 0.79, 1);">
+	                    <i class="material-icons">Dashboard</i>
+	                </div></div>
 	</div>
-
-	<div class="container">
+        <div class="sidebar-background" style="background-image: url(../assets/img/sidebar-4.jpg)"></div>
+    </div>
 		<div class="row">
 			<div class="col-md-12">
 				<h1><?php echo $title; ?></h1>
