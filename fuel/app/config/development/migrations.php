@@ -10,6 +10,8 @@ return array (
         1 => '002_add_image_to_users',
         2 => '003_add_name_to_users',
         3 => '004_create_monthly_point_rankings',
+        4 => '005_create_subjects',
+        5 => '006_create_trainings',
       ),
     ),
     'module' => 

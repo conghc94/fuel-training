@@ -1,11 +1,15 @@
 <?php
 
-class Model_Monthly_Point_Ranking extends \Orm\Model
+class Model_Training extends \Orm\Model
 {
 	protected static $_properties = array(
+		
 		'id',
-		'login_id',
-		'first_name',
+		'user_id',
+		'subject_id',
+		'date',
+		'time_start',
+		'time_end',
 		'created_at',
 		'updated_at',
 	);
@@ -21,6 +25,6 @@ class Model_Monthly_Point_Ranking extends \Orm\Model
 		),
 	);
 
-	protected static $_table_name = 'monthly_point_rankings';
+	protected static $_table_name = 'trainings';
 
 }
