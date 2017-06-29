@@ -8,6 +8,10 @@ return array (
       array (
         0 => '001_create_pages',
         1 => '002_create_monthly_point_rankings',
+        2 => '003_create_subjects',
+        3 => '004_create_trainings',
+        4 => '005_create_usermarks',
+        5 => '006_create_userexecutiontimes',
       ),
     ),
     'module' => 
