@@ -89,29 +89,31 @@ class Controller_Profile extends Controller_Admin {
 
         /* get mark average users */
         $average_marks_users = [];
-        $count_math = count(\Model_Usermark::query()->select('mark')->get());
-        $average_math = \Model_Usermark::query()->select('mark')->get();
+        $count_math = count(\Model_Usermark::query()->select('mark')->related('subjects',array('where' => array(array('name', '=', 'math'))))->get());
+        $average_math = \Model_Usermark::query()->select('mark')->related('subjects',array('where' => array(array('name', '=', 'math'))))->get();
         $sum_point_math = 0;
         foreach($average_math as $mark){
             $sum_point_math =  $sum_point_math + $mark['mark'];
         }
         array_push($average_marks_users, ($sum_point_math/$count_math));
-
-        $count_math = count(\Model_Usermark::query()->select('mark')->get());
+        
+        $count_math = count(\Model_Usermark::query()->select('mark')->related('subjects',array('where' => array(array('name', '=', 'math'))))->get());
         $average_math = \Model_Usermark::query()->select('mark')->get();
         $sum_point_math = 0;
         foreach($average_math as $mark){
             $sum_point_math = $sum_point_math + $mark['mark'];
         }
         array_push($average_marks_users, ($sum_point_math/$count_math));
+        echo "<pre>";
+        print_r($average_marks_users);exit;
 
-        $count_history = count(\Model_Usermark::query()->select('history')->get());
+        $count_history = count(\Model_Usermark::query()->select('mark')->get());
         $average_history = \Model_Usermark::query()->select('history')->get();
         $sum_point_history = 0;
         foreach($average_history as $mark){
             $sum_point_history = $sum_point_history + $mark['history'];
         }
-        array_push($average_marks_users, ($sum_point_math/$count_math));
+        array_push($average_marks_users, ($sum_point_history/$count_history));
         echo "<pre>";
         print_r($average_marks_users);exit;
         $this->template->title = "Profile";
