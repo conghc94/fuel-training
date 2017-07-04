@@ -1,5 +1,5 @@
 <?php
-class Model_Page extends \Orm\Model
+class Model_Post extends \Orm\Model
 {
 	protected static $_properties = array(
 		'id',
@@ -7,7 +7,7 @@ class Model_Page extends \Orm\Model
 		'slug',
 		'summary',
 		'body',
-		'publisher',
+		'user_id',
 		'created_at',
 		'updated_at',
 	);
@@ -30,7 +30,7 @@ class Model_Page extends \Orm\Model
 		$val->add_field('slug', 'Slug', 'required|max_length[255]');
 		$val->add_field('summary', 'Summary', 'required');
 		$val->add_field('body', 'Body', 'required');
-		$val->add_field('publisher', 'Publisher', 'required|valid_string[numeric]');
+		$val->add_field('user_id', 'User Id', 'required|valid_string[numeric]');
 
 		return $val;
 	}

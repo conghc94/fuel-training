@@ -1,8 +1,6 @@
-<div class="row">
-
-	<div class="col-md-3">
+<div class="row" style="background-image:url('../../../public/assets/img/bg-image.jpg')">
+	<div class="col-md-3" >
 		<?php echo Form::open(array()); ?>
-
 			<?php if (isset($_GET['destination'])): ?>
 				<?php echo Form::hidden('destination', $_GET['destination']); ?>
 			<?php endif; ?>

@@ -1,6 +1,7 @@
 <?php
+namespace admin;
 
-class Controller_Base extends Controller_Template
+class Controller_Base extends \Controller_Base
 {
 	public function before()
 	{
@@ -12,8 +13,7 @@ class Controller_Base extends Controller_Template
 		{
 			if (($id = $driver->get_user_id()) !== false)
 			{
-				$this->current_user = Model\Auth_User::find($id[1]);
-                                
+				$this->current_user = \Model\Auth_User::find($id[1]);
 			}
 			break;
 		}

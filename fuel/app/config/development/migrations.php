@@ -6,12 +6,17 @@ return array (
     array (
       'default' => 
       array (
-        0 => '001_create_pages',
-        1 => '002_add_image_to_users',
-        2 => '003_add_name_to_users',
-        3 => '004_create_monthly_point_rankings',
-        4 => '005_create_subjects',
+        0 => '001_create_users',
+        1 => '002_create_posts',
+        2 => '003_create_monthly_point_rankings',
+        3 => '004_create_subjects',
+        4 => '005_create_user_marks',
         5 => '006_create_trainings',
+        6 => '007_create_user_subject_execution_times',
+        7 => '008_create_add_foreignkey_user_marks_to_subjects',
+        8 => '009_create_add_foreignkey_monthly_point_rankings_to_users',
+        9 => '010_add_avatar_to_users',
+        10 => '011_create_add_foreignkey_trainings_to_users',
       ),
     ),
     'module' => 
@@ -19,20 +24,6 @@ return array (
     ),
     'package' => 
     array (
-      'auth' => 
-      array (
-        0 => '001_auth_create_usertables',
-        1 => '002_auth_create_grouptables',
-        2 => '003_auth_create_roletables',
-        3 => '004_auth_create_permissiontables',
-        4 => '005_auth_create_authdefaults',
-        5 => '006_auth_add_authactions',
-        6 => '007_auth_add_permissionsfilter',
-        7 => '008_auth_create_providers',
-        8 => '009_auth_create_oauth2tables',
-        9 => '010_auth_fix_jointables',
-        10 => '011_auth_group_optional',
-      ),
     ),
   ),
   'folder' => 'migrations/',

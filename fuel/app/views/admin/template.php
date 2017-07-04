@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $title; ?></title>
-	<?php echo Asset::css('bootstrap.css'); ?>
+            <?php echo Asset::css('bootstrap.css'); ?>
+            <?php echo Asset::css('style.css'); ?>
 	<style>
 		body { margin: 50px; }
 	</style>
@@ -16,7 +17,6 @@
 	</script>
 </head>
 <body>
-
 	<?php if ($current_user): ?>
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">

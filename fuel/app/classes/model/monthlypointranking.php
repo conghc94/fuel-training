@@ -1,14 +1,14 @@
 <?php
 
-class Model_Training extends \Orm\Model {
+class Model_Monthlypointranking extends \Orm\Model {
 
-    protected static $_table_name = 'trainings';
+    protected static $_table_name = 'monthly_point_rankings';
 
     protected static $_properties = array(
         'id',
-        'user_id',
-        'subject_id',
-        'time',
+        'point',
+        'year',
+        'month',
         'created_at',
         'updated_at',
     );
@@ -25,27 +25,23 @@ class Model_Training extends \Orm\Model {
 
     public static function validate($factory) {
         $val = Validation::forge($factory);
-        $val->add_field('user_id', 'User Id', 'required|valid_string[numeric]');
-        $val->add_field('subject_id', 'Subject Id', 'required|valid_string[numeric]');
-        $val->add_field('time', 'required');
+        $val->add_field('id', 'User Id', 'required|valid_string[numeric]');
+        $val->add_field('name', 'required|max_length[255]');
+        $val->add_field('point', 'required');
+        $val->add_field('year', 'required|valid_string[numeric]');
+        $val->add_field('month', 'required|valid_string[numeric]');
         return $val;
     }
-
+    
+    /*relation one one users*/
     protected static $_belongs_to = array(
         'users' => array(
-            'key_from' => 'user_id',
+            'key_from' => 'id',
             'model_to' => 'Model_User',
             'key_to' => 'id',
             'cascade_save' => true,
             'cascade_delete' => false,
-        ),
-        'subjects' => array(
-            'key_from' => 'subject_id',
-            'model_to' => 'Model_Subject',
-            'key_to' => 'id',
-            'cascade_save' => true,
-            'cascade_delete' => false,
-        ),
+        )
     );
 
 }

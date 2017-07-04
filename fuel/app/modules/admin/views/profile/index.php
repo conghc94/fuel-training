@@ -1,0 +1,130 @@
+<div class="row">
+    <div class="panel-default header-background">
+        <div class="col-xs-12">
+            <button class="btn color-button">first button</button>
+
+            <button class="btn color-button">second button</button>
+
+            <button class="btn color-button">third button</button>
+
+            <button class="btn color-button">fourth button</button>
+
+            <button class="btn color-button">first button</button>
+        </div>
+        <div class="col-xs-12 padding-top-5">
+            <button class="btn color-button">first button</button>
+
+            <button class="btn color-button">second button</button>
+
+            <button class="btn click-color-button">third button</button>
+
+            <button class="btn afer-click-color-button">fourth button</button>
+
+            <button class="btn afer-click-color-button">fifth button</button>
+
+            <button class="btn afer-click-color-button">sixth button</button>
+        </div>
+        <div class="col-xs-12 padding-top-5">
+            <button class="btn color-button">first button</button>
+
+            <button class="btn color-button">second button</button>
+
+            <button class="btn color-button">third button</button>
+
+            <button class="btn color-button">fourth button</button>
+
+            <button class="btn color-button">fifth button</button>
+
+            <button class="btn color-button">sixth button</button>
+
+            <button class="btn color-button">seventh button</button>
+        </div>
+        <hr class="hr-header">
+    </div>
+    <div class="col-xs-3">
+        <div class="scrollbar" id="style-default">
+            <button class="btn color-button left-btn-width-200 margin-top-15">first button</button>
+
+            <button class="btn color-button left-btn-width-200 margin-top-5">second button</button>
+
+            <button class="btn color-button left-btn-width-200 margin-top-5">third button</button>
+
+            <div class="force-overflow"></div>
+        </div>
+    </div>
+    <div class="col-xs-9">
+        <div class="scrollbar col-xs-12" id="style-default">
+            <p class="margin-top-15 ">
+                <span class="top-content-span">My profile  My profile My profile My profile My profile My profile My profile</span> 
+            </p>
+
+            <h3>MY PROFILE MY PROFILE </h3>
+            <div class="col-xs-12">
+                <button class="tablink" onclick="openCity('London', this, 'white')" id="defaultOpen">London</button>
+                <button class="tablink" onclick="openCity('Paris', this, 'white')">Paris</button>
+                <div id="London" class="tabcontent">
+                    <div class="col-xs-6 padding-top-25" style="margin-left: -430px;">
+                        <div class="col-xs-12 radar-chart-title" >
+                            <p >Radar chart</p>
+                        </div>
+                        <canvas id="myCanvas" width="400" height="400"></canvas>
+                    </div>
+                    <div class="col-xs-6">
+                        My profile  My profile My profile My profile My profile My profile My profile 
+                        My profile  My profile My profile My profile My profile My profile My profile My profile  
+                        My profile My profile My profile My profile My profile My profile My profile  My profile My profile
+                    
+                    </div>
+                </div>
+                <div id="Paris" class="tabcontent">
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="col-xs-6">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="force-overflow"></div>
+</div>
+</div>
+</div>
+<?php echo Asset::js('profile.js'); ?>
+<?php echo Asset::js('polygonalGraphWidget.js'); ?>
+<script>
+    var labels = new  Array();
+    <?php foreach($subjects as $subject){?>
+        labels.push('<?php echo $subject;?>');
+    <?php } ?>
+    console.log(labels);
+    var data1 = new Array(90, 80, 80, 90, 70);
+
+    var data = new Array(data1);
+    var myVar = $("#myCanvas").polygonalGraphWidget(
+            {
+                labels: labels,
+                data: data
+            }
+    );
+</script>
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
