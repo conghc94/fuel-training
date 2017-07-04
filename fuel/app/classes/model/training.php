@@ -1,15 +1,16 @@
 <?php
 
-class Model_Training extends \Orm\Model
+class Model_User extends \Orm\Model
 {
 	protected static $_properties = array(
-		
 		'id',
-		'user_id',
-		'subject_id',
-		'date',
-		'time_start',
-		'time_end',
+		'username',
+		'password',
+		'group',
+		'email',
+		'last_login',
+		'login_hash',
+		'profile_fields',
 		'created_at',
 		'updated_at',
 	);
@@ -25,6 +26,6 @@ class Model_Training extends \Orm\Model
 		),
 	);
 
-	protected static $_table_name = 'trainings';
+	protected static $_table_name = 'users';
 
 }

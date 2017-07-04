@@ -1,14 +1,16 @@
 <?php
 
-class Model_Usermark extends \Orm\Model
+class Model_User extends \Orm\Model
 {
 	protected static $_properties = array(
-		
 		'id',
-		'user_id',
-		'subject_id',
-		'mark',
-		,
+		'username',
+		'password',
+		'group',
+		'email',
+		'last_login',
+		'login_hash',
+		'profile_fields',
 		'created_at',
 		'updated_at',
 	);
@@ -24,6 +26,6 @@ class Model_Usermark extends \Orm\Model
 		),
 	);
 
-	protected static $_table_name = 'user_marks';
+	protected static $_table_name = 'users';
 
 }
