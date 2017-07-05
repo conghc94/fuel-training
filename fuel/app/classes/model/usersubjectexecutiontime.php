@@ -1,13 +1,13 @@
 <?php
 
-class Model_Training extends \Orm\Model
+class Model_Usersubjectexecutiontime extends \Orm\Model
 {
 	protected static $_properties = array(
 		
 		'id',
 		'user_id',
 		'subject_id',
-		'time',
+		'execution_time',
 		'created_at',
 		'updated_at',
 	);
@@ -40,6 +40,6 @@ class Model_Training extends \Orm\Model
 		),
 	);
 
-	protected static $_table_name = 'trainings';
+	protected static $_table_name = 'user_subject_execution_times';
 
 }

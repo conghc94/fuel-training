@@ -240,9 +240,9 @@ return array(
 	 *
 	 * Paths MUST end with a directory separator (the DS constant)!
 	 */
-	'module_paths' => array(
-		APPPATH.'modules'.DS
-	),
+	 'module_paths' => array(
+	 	APPPATH.'modules'.DS
+	 ),
 
 	/**
 	 * To enable you to split up your additions to the framework, packages are
@@ -285,10 +285,10 @@ return array(
 		 *
 		 * A path must be set in module_paths for this to work.
 		 */
-		'modules'  => array (
-			'admin',
-			'user',
-		),
+		'modules'  => array(
+                    'admin',
+                    'user',
+                ),
 
 		/**
 		 * Classes to autoload & initialize even when not used

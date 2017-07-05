@@ -4,7 +4,8 @@
 	<meta charset="utf-8">
 	<title><?php echo $title; ?></title>
 	<?php echo Asset::css('bootstrap.css'); ?>
-	<?php echo Asset::css('material-dashboard.css'); ?>
+    <?php echo Asset::css('material-dashboard.css'); ?>
+    <?php echo Asset::css('admin.css'); ?>
 	<style>
 		body { margin: 50px; }
 	</style>
@@ -12,6 +13,7 @@
 		'http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js',
 		'bootstrap.js',
 	)); ?>
+	<?php echo Asset::js('jqmeter.min.js'); ?>
 	<script>
 		$(function(){ $('.topbar').dropdown(); });
 	</script>
@@ -53,7 +55,7 @@
 					<li class="dropdown">
 						<a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo $current_user->username ?> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><?php echo Html::anchor('admin/logout', 'Logout') ?></li>
+							<li><?php echo Html::anchor('admin/index/logout', 'Logout') ?></li>
 						</ul>
 					</li>
 				</ul>
@@ -63,6 +65,68 @@
 	<?php endif; ?>
 
 	<div class="container">
+
+	<div class="sidebar" data-color="red" data-image="">
+        <sidebar-cmp><div class="logo">
+    <a class="simple-text" href="https://www.creative-tim.com">
+        <div class="logo-img">
+            <img src="public/assets/img/angular2-logo-red.png">
+        </div>
+        Creative Tim
+    </a>
+</div>
+<div class="sidebar-wrapper">
+    <div class="nav-container">
+        <ul class="nav">
+            <!--template bindings={}--><li routerlinkactive="active" class="active">
+                <a href="#/dashboard">
+                    
+                    <p>Dashboard</p>
+                </a>
+            </li><li routerlinkactive="active" class="">
+                <a href="#/user">
+                    
+                    <p>User Profile</p>
+                </a>
+            </li><li routerlinkactive="active" class="">
+                <a href="#/table">
+                    
+                    <p>Table List</p>
+                </a>
+            </li><li routerlinkactive="active" class="">
+                <a href="#/typography">
+                    
+                    <p>Typography</p>
+                </a>
+            </li><li routerlinkactive="active" class="">
+                <a href="#/icons">
+                    
+                    <p>Icons</p>
+                </a>
+            </li><li routerlinkactive="active" class="">
+                <a href="#/maps">
+                    
+                    <p>Maps</p>
+                </a>
+            </li><li routerlinkactive="active" class="">
+                <a href="#/notifications">
+                    
+                    <p>Notifications</p>
+                </a>
+            </li><li routerlinkactive="active" class="active-pro">
+                <a href="#/upgrade">
+                    
+                    <p>Upgrade to PRO</p>
+                </a>
+            </li>
+        </ul>
+    <div class="moving-tab" style="width: 230px; transform: translate3d(0px, 20px, 0px); transition: all 0.5s cubic-bezier(0.29, 1.42, 0.79, 1);">
+                    <p>Dashboard</p>
+                </div></div>
+</div>
+</sidebar-cmp>
+        <div class="sidebar-background" style="background-image: url(../assets/img/sidebar-4.jpg)"></div>
+    </div>
 		<div class="row">
 			<div class="col-md-12">
 				<h1><?php echo $title; ?></h1>
@@ -95,7 +159,9 @@
 				<a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.<br>
 				<small>Version: <?php echo e(Fuel::VERSION); ?></small>
 			</p>
+			<?php echo Asset::js('bar.js'); ?>
 		</footer>
 	</div>
 </body>
 </html>
+
