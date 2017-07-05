@@ -10,6 +10,8 @@ class Model_User extends \Orm\Model {
         'password',
         'group',
         'email',
+        'name',
+        'avatar',
         'last_login',
         'login_hash',
         'profile_fields',
@@ -25,6 +27,38 @@ class Model_User extends \Orm\Model {
             'events' => array('before_update'),
             'mysql_timestamp' => false,
         ),
+    );
+    protected static $_has_many = array(
+        'user_subject_execution_times' => array(
+            'model_to' => 'Model_Usersubjectexecutiontime',
+            'key_from' => 'id',
+            'key_to' => 'user_id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        ),
+        'user_marks' => array(
+            'model_to' => 'Model_Usermark',
+            'key_from' => 'id',
+            'key_to' => 'user_id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        ),
+        'trainings' => array(
+            'model_to' => 'Model_Training',
+            'key_from' => 'id',
+            'key_to' => 'user_id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        ),
+    );
+    protected static $_has_one = array(
+        'monthly_point_rankings' => array(
+            'key_from' => 'id',
+            'model_to' => 'Model_Monthlypointranking',
+            'key_to' => 'id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        )
     );
 
     public static function validate($factory, $param = array()) {
@@ -97,39 +131,11 @@ class Model_User extends \Orm\Model {
         return $val;
     }
 
-    /* relation one one monthly_point_rankings */
-
-    protected static $_has_one = array(
-        'monthly_point_rankings' => array(
-            'key_from' => 'id',
-            'model_to' => 'Model_Monthlypointranking',
-            'key_to' => 'id',
-            'cascade_save' => true,
-            'cascade_delete' => false,
-        )
-    );
-    protected static $_has_many = array(
-        'user_subject_execution_times' => array(
-            'model_to' => 'Model_Usersubjectexecutiontime',
-            'key_from' => 'id',
-            'key_to' => 'user_id',
-            'cascade_save' => true,
-            'cascade_delete' => false,
-        ),
-        'user_marks' => array(
-            'model_to' => 'Model_Usermark',
-            'key_from' => 'id',
-            'key_to' => 'user_id',
-            'cascade_save' => true,
-            'cascade_delete' => false,
-        ),
-        'trainings' => array(
-            'model_to' => 'Model_Training',
-            'key_from' => 'id',
-            'key_to' => 'user_id',
-            'cascade_save' => true,
-            'cascade_delete' => false,
-        ),
-    );
+    public static function getUserRankList() {
+        $entry = Model_User::query()->select('name', 'avatar', 't1.point')->related('monthly_point_rankings')->order_by('monthly_point_rankings.point', 'desc')->get();
+        // echo '<pre>';
+        // print_r($entry);exit;
+        return $entry;
+    }
 
 }
