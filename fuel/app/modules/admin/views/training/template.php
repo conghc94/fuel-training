@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8">
         <title><?php echo $title; ?></title>
-            <?php echo Asset::css('bootstrap.css'); ?>
-            <?php echo Asset::css('admin/profile-template.css'); ?>
+        <?php echo Asset::css('bootstrap.css'); ?>
+        <?php echo Asset::css('admin/admin-template.css'); ?>
+        <?php echo Asset::css('material-dashboard.css'); ?>
+        <?php echo Asset::css('calendar/dhtmlxscheduler.css')?>
         <style>
             body { margin: 50px; }
         </style>
@@ -12,9 +14,8 @@
         echo Asset::js(array(
             'http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js',
             'bootstrap.js',
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
-            "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js",
-            
+            'calendar/dhtmlxscheduler.js',
+            'calendar/dhtmlxscheduler_minical.js',
         ));
         ?>
         <script>
@@ -25,7 +26,7 @@
     </head>
     <body>
         <?php if ($current_user): ?>
-            <div class="navbar navbar-inverse navbar-fixed-top header-background">
+            <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -68,12 +69,27 @@
         <?php endif; ?>
 
         <div class="container">
-            <div class="row border-around">
-                <div class="col-md-12 padding-top-20 header-background">
-
+            <div class="row">
+                <div class="col-md-12">
+                    <?php if (Session::get_flash('success')): ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <p>
+                                <?php echo implode('</p><p>', (array) Session::get_flash('success')); ?>
+                            </p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (Session::get_flash('error')): ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <p>
+                                <?php echo implode('</p><p>', (array) Session::get_flash('error')); ?>
+                            </p>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="col-md-12">
-                    <?php echo $content; ?>
+                    <?php echo $content;?>
                 </div>
             </div>
             <hr/>

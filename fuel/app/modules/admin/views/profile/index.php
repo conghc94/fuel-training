@@ -80,8 +80,7 @@
                                 <button class="btn btn-primary button-detail-radar-chart">Name Radar</button>
                             </div>
                             <div class="col-xs-12 detail-radar-chart-down">
-                                <label class="col-xs-12 label-detail-radar-chart margin-top-5"> Name Radar Chart </label>
-
+                                <label class="col-xs-12 label-detail-radar-chart margin-top-5">Name Radar Chart</label>
                                 <div class="col-xs-4 color-average-user-mark">
                                     <span class=""></span>
                                 </div>
