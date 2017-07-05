@@ -10,11 +10,11 @@ $.widget("revilkent.polygonalGraphWidget", {
         circleLineWidth: 5,
         circleRadius: 150,
         circleLineColor: "#333",
-        circleBackgroundColor: "rgba(100, 161, 265, 1)",
+        circleBackgroundColor: "rgba(255, 210, 158, 1)",
         graph_colors: [
-            "rgba(255, 0, 0, 0.6)",
-            "rgba(0, 255, 0, 0.6)",
-            "rgba(0, 0, 255, 0.6)"
+            "rgba(251, 176, 163, 0.6)",
+            "rgba(162, 159, 190, 0.6)",
+            "rgba(187, 134, 82, 0.6)"
         ],
         max_val: 99,
         phase_start: (Math.PI / 2),

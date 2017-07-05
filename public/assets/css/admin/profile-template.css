@@ -124,8 +124,112 @@ body {font-family: "Lato", sans-serif;}
     margin-left: 45px;
     width: 375px;
 }
-
+.ground-name{
+    width:400px;
+    background-color: #CCCCCC;
+    margin-left: 20px;
+    margin-bottom: -10px;
+    padding-top: 5px;
+}
+.name-radar-chart{
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: #CCCCCC;
+    border-style: double;
+    width: 380px;
+    background-color: #FFFFFF;
+    margin-left: 10px;
+    height: 30px;
+}
 #myCanvas{
     background-color: #CCCCCC;
     margin-left: 20px;
+}
+
+/*button right*/
+.button-right{
+    float:right;
+    margin-right: -100px;
+}
+
+/*style name radar chart*/
+.detail-radar-chart{
+    margin-top: 50px;
+    height: 190px;
+    background-color: #CCCCCC;
+    width: 390px;
+}
+.label-detail-radar-chart{
+    background-color: #FFF;
+    border-color: #CCCCCC;
+    border-width: 2px;
+    height: 25px;
+    border-radius: 3px;
+}
+.textarea-detail-radar-chart{
+    height: 80px;
+    border-width: 2px;
+    border-radius: 5px;
+}
+.button-detail-radar-chart{
+    float: right;
+    margin-top: 10px;
+}
+.detail-radar-chart-down{
+    background-color: #CCCCCC;
+    margin-top: 5px;
+    width: 390px;
+    height: 190px;
+}
+
+.color-average-user-mark{
+    width: 100px;
+    background-color: #BF9478;
+    height: 15px;
+    margin-top: 20px;
+}
+.color-highest-user-mark{
+    width: 100px;
+    background-color: #C6ABB2;
+    height: 15px;
+    margin-top: 20px;
+}
+.color-user-mark{
+    width: 100px;
+    background-color: #FDBEA1;
+    height: 15px;
+    margin-top: 20px;
+}
+.line-average-user-mark{
+    width: 130px;
+    background-color: #000000;
+    height: 2px;
+    margin-top: 25px;
+    margin-left: 5px;
+   
+}
+.line-highest-user-mark{
+    width: 130px;
+    background-color: #BDC5CC;
+    height: 2px;
+    margin-top: 25px;
+    margin-left: 5px;
+   
+}
+.line-user-mark{
+    width: 130px;
+    background-color: #DAABAB;
+    height: 2px;
+    margin-top: 25px;
+    margin-left: 5px;
+   
+}
+.name-average-user-mark{
+     margin-top: 15px;
+}
+.name-highest-user-mark{
+     margin-top: 15px;
+}
+.name-user-mark{
+     margin-top: 15px;
 }
