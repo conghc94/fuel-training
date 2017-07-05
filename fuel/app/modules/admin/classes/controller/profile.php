@@ -89,6 +89,7 @@ class Controller_Profile extends Controller_Admin {
 
         /* get mark average users */
         $average_marks_users = [];
+        /*average mark math*/
         $count_math = count(\Model_Usermark::query()->select('mark')->related('subjects',array('where' => array(array('name', '=', 'math'))))->get());
         $average_math = \Model_Usermark::query()->select('mark')->related('subjects',array('where' => array(array('name', '=', 'math'))))->get();
         $sum_point_math = 0;
@@ -96,26 +97,56 @@ class Controller_Profile extends Controller_Admin {
             $sum_point_math =  $sum_point_math + $mark['mark'];
         }
         array_push($average_marks_users, ($sum_point_math/$count_math));
-        
-        $count_math = count(\Model_Usermark::query()->select('mark')->related('subjects',array('where' => array(array('name', '=', 'math'))))->get());
-        $average_math = \Model_Usermark::query()->select('mark')->get();
-        $sum_point_math = 0;
-        foreach($average_math as $mark){
-            $sum_point_math = $sum_point_math + $mark['mark'];
-        }
-        array_push($average_marks_users, ($sum_point_math/$count_math));
-        echo "<pre>";
-        print_r($average_marks_users);exit;
+//        echo "<pre>";
+//        print_r($average_marks_users);exit;
 
-        $count_history = count(\Model_Usermark::query()->select('mark')->get());
-        $average_history = \Model_Usermark::query()->select('history')->get();
+        /*average mark history*/
+        $count_history = count(\Model_Usermark::query()->select('mark')->related('subjects',array('where' => array(array('name', '=', 'history'))))->get());
+        $average_history = \Model_Usermark::query()->select('mark')->related('subjects',array('where' => array(array('name', '=', 'history'))))->get();
         $sum_point_history = 0;
         foreach($average_history as $mark){
-            $sum_point_history = $sum_point_history + $mark['history'];
+            $sum_point_history = $sum_point_history + $mark['mark'];
         }
         array_push($average_marks_users, ($sum_point_history/$count_history));
-        echo "<pre>";
-        print_r($average_marks_users);exit;
+//        echo "<pre>";
+//        print_r($average_marks_users);exit;
+
+        /*average mark english*/
+        $count_english = count(\Model_Usermark::query()->select('mark')->related('subjects',array('where' => array(array('name', '=', 'english'))))->get());
+        $average_english = \Model_Usermark::query()->select('mark')->related('subjects',array('where' => array(array('name', '=', 'english'))))->get();
+        $sum_point_english = 0;
+        foreach($average_english as $mark){
+            $sum_point_english = $sum_point_english + $mark['mark'];
+        }
+        array_push($average_marks_users, ($sum_point_english/$count_english));
+//        echo "<pre>";
+//        print_r($average_marks_users);exit;
+        
+        /*average mark science*/
+        $count_science = count(\Model_Usermark::query()->select('mark')->related('subjects',array('where' => array(array('name', '=', 'science'))))->get());
+        $average_science = \Model_Usermark::query()->select('mark')->related('subjects',array('where' => array(array('name', '=', 'science'))))->get();
+        $sum_point_science = 0;
+        foreach($average_science as $mark){
+            $sum_point_science = $sum_point_science + $mark['mark'];
+        }
+        array_push($average_marks_users, ($sum_point_science/$count_science));
+//        echo "<pre>";
+//        print_r($average_marks_users);exit;
+        
+        /*average mark physics*/
+        $count_physics = count(\Model_Usermark::query()->select('mark')->related('subjects',array('where' => array(array('name', '=', 'physics'))))->get());
+        $average_physics = \Model_Usermark::query()->select('mark')->related('subjects',array('where' => array(array('name', '=', 'physics'))))->get();
+        $sum_point_physics = 0;
+        foreach($average_physics as $mark){
+            $sum_point_physics = $sum_point_physics + $mark['mark'];
+        }
+        array_push($average_marks_users, ($sum_point_physics/$count_physics));
+        
+        $data['average_marks_users'] = $average_marks_users;
+        
+//        echo "<pre>";
+//        print_r($average_marks_users);exit;
+        
         $this->template->title = "Profile";
         $this->template->content = \View::forge('profile/index', $data);
     }

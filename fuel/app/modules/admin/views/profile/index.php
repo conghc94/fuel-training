@@ -57,24 +57,26 @@
             <p class="margin-top-15 ">
                 <span class="top-content-span">My profile  My profile My profile My profile My profile My profile My profile</span> 
             </p>
-
             <h3>MY PROFILE MY PROFILE </h3>
             <div class="col-xs-12">
                 <button class="tablink" onclick="openCity('London', this, 'white')" id="defaultOpen">London</button>
                 <button class="tablink" onclick="openCity('Paris', this, 'white')">Paris</button>
                 <div id="London" class="tabcontent">
-                    <div class="col-xs-6 padding-top-25" style="margin-left: -430px;">
-                        <div class="col-xs-12 radar-chart-title" >
-                            <p >Radar chart</p>
+                    <div class="col-xs-12">
+                        <div class="col-xs-6 padding-top-25" style="margin-left: -430px;">
+                            <div class="col-xs-12 radar-chart-title" >
+                                <p>Radar chart</p>
+                            </div>
+                            <canvas id="myCanvas" width="400" height="400"></canvas>
                         </div>
-                        <canvas id="myCanvas" width="400" height="400"></canvas>
+                        <div class="col-xs-6">
+                            My profile  My profile My profile My profile My profile My profile My profile 
+                            My profile  My profile My profile My profile My profile My profile My profile My profile  
+                            My profile My profile My profile My profile My profile My profile My profile  My profile My profile
+
+                        </div>
                     </div>
-                    <div class="col-xs-6">
-                        My profile  My profile My profile My profile My profile My profile My profile 
-                        My profile  My profile My profile My profile My profile My profile My profile My profile  
-                        My profile My profile My profile My profile My profile My profile My profile  My profile My profile
-                    
-                    </div>
+
                 </div>
                 <div id="Paris" class="tabcontent">
                 </div>
@@ -96,17 +98,38 @@
 <?php echo Asset::js('profile.js'); ?>
 <?php echo Asset::js('polygonalGraphWidget.js'); ?>
 <script>
-    var labels = new  Array();
-    <?php foreach($subjects as $subject){?>
-        labels.push('<?php echo $subject;?>');
-    <?php } ?>
-    console.log(labels);
-    var data1 = new Array(90, 80, 80, 90, 70);
+    /*create label name subject in chart*/
+    var subjects_chart = new Array();
+<?php foreach ($subjects as $subject) { ?>
+        subjects_chart.push('<?php echo $subject; ?>');
+<?php } ?>
+    console.log(subjects_chart);
 
-    var data = new Array(data1);
+    /*create point user_auth*/
+    var user_marks_chart = new Array();
+<?php foreach ($user_marks as $user_mark) { ?>
+        user_marks_chart.push('<?php echo $user_mark * 10; ?>');
+<?php } ?>
+    console.log(user_marks_chart);
+
+    /*create point highest chart*/
+    var highest_marks_chart = new Array();
+<?php foreach ($highest_marks as $highest_mark) { ?>
+        highest_marks_chart.push('<?php echo $highest_mark * 10; ?>');
+<?php } ?>
+    console.log(highest_marks_chart);
+    var data = new Array(user_marks_chart, highest_marks_chart);
+
+    /*create point average users chart*/
+    var average_marks_users_chart = new Array();
+<?php foreach ($average_marks_users as $average_marks_user) { ?>
+        average_marks_users_chart.push('<?php echo $average_marks_user * 10; ?>');
+<?php } ?>
+    console.log(average_marks_users_chart);
+    var data = new Array(user_marks_chart, highest_marks_chart, average_marks_users_chart);
     var myVar = $("#myCanvas").polygonalGraphWidget(
             {
-                labels: labels,
+                labels: subjects_chart,
                 data: data
             }
     );
