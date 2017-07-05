@@ -4,13 +4,12 @@ namespace admin;
 
 class Controller_Index extends Controller_Base {
 
-    public $template = 'template';
-
     public function before() {
         parent::before();
 
         $this->template->header = "";
         $this->template->title = "メンバー管理システム";
+        //$this->template->pagetitle = \Constants::$page_title['login'];
     }
 
     public function action_login() {
@@ -59,7 +58,6 @@ class Controller_Index extends Controller_Base {
      * @return  void
      */
     public function action_logout() { //ログアウトする
-        \Auth::logout();
         \Response::redirect('admin/index/login');
     }
 

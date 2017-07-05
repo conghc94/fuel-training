@@ -1,4 +1,4 @@
-<div class="row" style="background-image:url('../../../assets/img/cover.jpeg')">
+<div class="row" style="background-image:url('../../../public/assets/img/bg-image.jpg')">
 	<div class="col-md-3" >
 		<?php echo Form::open(array()); ?>
 			<?php if (isset($_GET['destination'])): ?>

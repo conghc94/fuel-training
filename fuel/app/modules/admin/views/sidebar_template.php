@@ -159,7 +159,6 @@
 				<a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.<br>
 				<small>Version: <?php echo e(Fuel::VERSION); ?></small>
 			</p>
-			<?php echo Asset::js('bar.js'); ?>
 		</footer>
 	</div>
 </body>

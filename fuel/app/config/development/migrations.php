@@ -15,6 +15,8 @@ return array (
         6 => '007_create_user_subject_execution_times',
         7 => '008_create_add_foreignkey_user_marks_to_subjects',
         8 => '009_create_add_foreignkey_monthly_point_rankings_to_users',
+        9 => '010_add_avatar_to_users',
+        10 => '011_create_add_foreignkey_trainings_to_users',
       ),
     ),
     'module' => 
