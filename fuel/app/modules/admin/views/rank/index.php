@@ -51,9 +51,13 @@
 		</div>
 		
 		<div class="col-xs-2">
-			<h3 class="col-md-offset-1">1</h3>
+			<h3 class="col-md-offset-4">1</h3>
+			<!-- <div class="row" id="ranking">
+				<div class="arrow-right col-md-3"></div>
+				<div class="col-md-3 skills css">40%</div>
+			</div> -->
 			<div id="jqmeter-container"></div>
-			<h3 class="col-md-offset-1"><?php echo $total_user; ?></h3>
+			<h3 class="col-md-offset-4"><?php echo $total_user; ?></h3>
 		</div>
   	</div>
 
@@ -96,14 +100,14 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		var clientHeight = document.getElementById('list').clientHeight;
-		alert(clientHeight);
 	    $('#jqmeter-container').jQMeter({
 			goal:'<?php echo $total_user;?>',
 		    raised:'<?php echo ($rank);?>',
 		    meterOrientation:'vertical',
 		    width:'50px',
 		    height: clientHeight + 'px',
-		    barColor: '#83a4d4',
+		    barColor: 'linear-gradient(to top, #DEEEFF, #0782FF)',
+		    bgColor: 'linear-gradient(to top, #DEEEFF, #0782FF)'
 	    });
 	});
 </script>

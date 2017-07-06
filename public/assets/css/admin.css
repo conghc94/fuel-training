@@ -73,3 +73,31 @@ div.tab button.active {
     
     font: 32px Arial, sans-serif;
 }
+
+/*Css for ranking bar*/
+* {box-sizing: border-box}
+
+.skills {
+  position: relative;
+  width: 10%;
+  background-color: #ddd;
+  padding-right: 35px;
+  line-height: 400px;
+  color: white;
+  margin-left: 30px;
+}
+
+.arrow-right {
+  z-index: 1;
+  position: absolute;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 50px solid gray;
+}
+
+.css {
+    background: #36D1DC;
+    background: -webkit-linear-gradient(to top, #DEEEFF, #0782FF);
+    background: linear-gradient(to top, #DEEEFF, #0782FF);
+}
+/*Css for ranking bar*/

@@ -5,7 +5,6 @@
         <title><?php echo $title; ?></title>
         <?php echo Asset::css('bootstrap.css'); ?>
         <?php echo Asset::css('admin/profile-template.css'); ?>
-
         <style>
             body { margin: 50px; }
         </style>
@@ -15,7 +14,6 @@
             'bootstrap.js',
             'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
             "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js",
-            
         ));
         ?>
         <script>
@@ -41,19 +39,8 @@
                             <li class="<?php echo Uri::segment(2) == '' ? 'active' : '' ?>">
                                 <?php echo Html::anchor('admin', 'Dashboard') ?>
                             </li>
-
-                            <?php
-                            $files = new GlobIterator(APPPATH . 'classes/controller/admin/*.php');
-                            foreach ($files as $file) {
-                                $section_segment = $file->getBasename('.php');
-                                $section_title = Inflector::humanize($section_segment);
-                                ?>
-                                <li class="<?php echo Uri::segment(2) == $section_segment ? 'active' : '' ?>">
-                                    <?php echo Html::anchor('admin/' . $section_segment, $section_title) ?>
-                                </li>
-                                <?php
-                            }
-                            ?>
+                            <li><a href="<?php echo Uri::base() ?>admin/profile">Profile</a></li>
+                            <li><a href="<?php echo Uri::base() ?>admin/trainingcalendar">Training Calendar</a></li>
                         </ul>
                         <ul class="nav navbar-nav pull-right">
                             <li class="dropdown">

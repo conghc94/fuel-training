@@ -9,12 +9,12 @@ class Controller_Rank extends Controller_Base
 	public function action_index() {
 		$data['users'] = \Model_User::getUserRankList();
 		$data['total_user'] = \Model_User::count();
-		$rank = 0;
+		$rank = $data['total_user'] - 1;
 		foreach ($data['users'] as $key => $value) {
-			$rank++;
 			if($value->id == \Auth::get('id')) {
 				$data['rank'] = $rank;
 			}
+			$rank--;
 		}
 
 		//echo $data['rank'];exit;

@@ -64,14 +64,47 @@
                 <div id="London" class="tabcontent">
                     <div class="col-xs-12">
                         <div class="col-xs-6 padding-top-25" style="margin-left: -430px;">
-                            <div class="col-xs-12 radar-chart-title" >
-                                <p>Radar chart</p>
+                            <div class="ground-name">
+                                <p class="name-radar-chart">Radar chart</p>
                             </div>
-                            <canvas id="myCanvas" width="400" height="400"></canvas>
+                            <canvas id="myCanvas" width="400" height="400">
+                            </canvas>
                         </div>
                         <div class="col-xs-6 padding-top-25">
-                            <div class="">
-                                <button class="btn btn-primary">Button right</button>
+                            <div class="button-right">
+                                <button class="btn btn-primary"><span>Button right |  </span><span class="glyphicon glyphicon-briefcase"></span></button>
+                            </div>
+                            <div class="col-xs-12 detail-radar-chart">
+                                <label class="col-xs-12 label-detail-radar-chart margin-top-5"> Name Radar Chart </label>
+                                <textarea class="col-xs-12 textarea-detail-radar-chart">Name Radar Chart Name Radar Chart Name Radar Chart Name Radar Chart</textarea>
+                                <button class="btn btn-primary button-detail-radar-chart">Name Radar</button>
+                            </div>
+                            <div class="col-xs-12 detail-radar-chart-down">
+                                <label class="col-xs-12 label-detail-radar-chart margin-top-5">Name Radar Chart</label>
+                                <div class="col-xs-4 color-average-user-mark">
+                                    <span class=""></span>
+                                </div>
+                                <div class="col-xs-4 line-average-user-mark">
+                                </div>
+                                <div class="col-xs-4 name-average-user-mark">
+                                    <span>average users</span>
+                                </div>
+                                <div class="col-xs-4 color-highest-user-mark">
+                                    <span class=""></span>
+                                </div>
+                                <div class="col-xs-4 line-highest-user-mark">
+                                </div>
+                                <div class="col-xs-4 name-average-user-mark">
+                                    <span>highest marks</span>
+                                </div>
+                                <div class="col-xs-4 color-user-mark">
+                                    <span class=""></span>
+                                </div>
+                                <div class="col-xs-4 line-user-mark">
+                                </div>
+                                <div class="col-xs-4 name-average-user-mark">
+                                    <span>marks of <?php echo \Auth::get('name')?></span>
+                                </div>
                             </div>
                         </div>
                     </div>
