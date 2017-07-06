@@ -1,14 +1,32 @@
 <div class="row">
-	<div class="col-md-5 col-md-offset-9">
-		<button class="btn btn-primary">Button 1</button>
-		<button class="btn btn-danger">Button 2</button>
+	<div class="col-md-2 col-md-offset-8">
+		<div class="bar-main">
+			<div class="bar-element active">
+				<a href="#" class="li-element">NEW</a>
+			</div>
+			<div class="bar-element">
+				<a href="#" class="li-element">STYLE</a>
+			</div>
+		</div>
 	</div>
-	<div class="col-md-5 col-md-offset-9">
-		<button class="btn btn-success">Button 3</button>
-		<button class="btn btn-warning">Button 4</button>
+
+	<div class="col-md-2">
+		<div class="bar-main">
+			<div class="bar-element active">
+				<a href="#" class="li-element">NEW</a>
+			</div>
+			<div class="bar-element">
+				<a href="#" class="li-element">LIFE</a>
+			</div>
+		</div>
 	</div>
 </div>
 
+<ul class="nav nav-tabs">
+    <li class="active"><a type="button" class="tablinks" onclick="openTab(event, 'tab-1')" href="#">Home</a></li>
+    <li><a type="button" class="tablinks" onclick="openTab(event, 'Paris')" href="#">Menu 1</a></li>
+    <li><a type="button" class="tablinks" onclick="openTab(event, 'Tokyo')" href="#">Menu 2</a></li>
+ </ul>
 <div class="tab">
   <button class="tablinks" onclick="openTab(event, 'tab-1')">London</button>
   <button class="tablinks" onclick="openTab(event, 'Paris')">Paris</button>
@@ -32,7 +50,8 @@
 				
 			</div>
   		</div>
-  		<div class="col-xs-10" id="list">
+  		<!-- User list -->
+  		<div class="col-xs-10" id="list" style="margin-top: 5%;">
   		<?php $i = 1; ?>
   		<?php foreach ($users as $user) { ?>
 			<div class="row">
@@ -51,13 +70,9 @@
 		</div>
 		
 		<div class="col-xs-2">
-			<h3 class="col-md-offset-4">1</h3>
-			<!-- <div class="row" id="ranking">
-				<div class="arrow-right col-md-3"></div>
-				<div class="col-md-3 skills css">40%</div>
-			</div> -->
+			<h3 class="col-md-offset-4">1名</h3>
 			<div id="jqmeter-container"></div>
-			<h3 class="col-md-offset-4"><?php echo $total_user; ?></h3>
+			<h3 class="col-md-offset-4"><?php echo $total_user; ?>名</h3>
 		</div>
   	</div>
 
@@ -93,6 +108,8 @@
 	    // Show the current tab, and add an "active" class to the button that opened the tab
 	    document.getElementById(cityName).style.display = "block";
 	    evt.currentTarget.className += " active";
+	    evt.currentTarget.parentElement.className += " active";
+
 	}
 </script>
 

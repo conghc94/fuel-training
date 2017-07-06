@@ -11,24 +11,27 @@
 /* Style the tab */
 div.tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+    /*sbackground-color: #f1f1f1;*/
 }
 
 /* Style the buttons inside the tab */
 div.tab button {
     background-color: inherit;
     float: left;
-    border: none;
+    border: 1px;
+    border-radius: 5px 5px 0 0;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
+    margin: 2px;
     transition: 0.3s;
 }
 
 /* Change background color of buttons on hover */
 div.tab button:hover {
     background-color: #ddd;
+    border: none;
 }
 
 /* Create an active/current tablink class */
@@ -58,20 +61,20 @@ div.tab button.active {
 }
 
 .number-circle {
-	margin-top: 9%;
+	  margin-top: 3%;
     border-radius: 50%;
     behavior: url(PIE.htc); /* remove if you don't care about IE8 */
 
-    width: 46px;
-    height: 46px;
-    padding: 4px;
+    width: 120px;
+    height: 120px;
+    padding: 1%;
     
     background: #fff;
     border: 2px solid #666;
     color: #666;
     text-align: center;
     
-    font: 32px Arial, sans-serif;
+    font: 70px Arial, sans-serif;
 }
 
 /*Css for ranking bar*/
@@ -100,4 +103,37 @@ div.tab button.active {
     background: -webkit-linear-gradient(to top, #DEEEFF, #0782FF);
     background: linear-gradient(to top, #DEEEFF, #0782FF);
 }
-/*Css for ranking bar*/
+
+.bar-main {
+    min-height: 20px;
+    background-color: white;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    /*margin-bottom: 10px;*/
+}
+
+.bar-element {
+    min-height: 20px;
+    padding: 19px;
+    background-color: white;
+    /*border: 1px solid #e3e3e3;*/
+    border-radius: 4px;
+}
+
+div.active {
+  background-color: #3D8BCD;
+}
+
+.active a, p{
+  color: white;
+}
+
+.sm-noti {
+  border-radius: 40%;
+  width: 30px;
+  height: 20px;
+  text-align: center;
+  background-color: #979797;
+  color: white;
+  float: right;
+}

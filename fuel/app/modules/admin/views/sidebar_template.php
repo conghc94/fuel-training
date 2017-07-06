@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<!-- <meta http-equiv="refresh" content="2" > -->
 	<title><?php echo $title; ?></title>
 	<?php echo Asset::css('bootstrap.css'); ?>
-    <?php echo Asset::css('material-dashboard.css'); ?>
     <?php echo Asset::css('admin.css'); ?>
 	<style>
 		body { margin: 50px; }
@@ -63,93 +63,78 @@
 		</div>
 	</div>
 	<?php endif; ?>
-
-	<div class="container">
-
-	<div class="sidebar" data-color="red" data-image="">
-        <sidebar-cmp><div class="logo">
-    <a class="simple-text" href="https://www.creative-tim.com">
-        <div class="logo-img">
-            <img src="public/assets/img/angular2-logo-red.png">
-        </div>
-        Creative Tim
-    </a>
-</div>
-<div class="sidebar-wrapper">
-    <div class="nav-container">
-        <ul class="nav">
-            <!--template bindings={}--><li routerlinkactive="active" class="active">
-                <a href="#/dashboard">
-                    
-                    <p>Dashboard</p>
-                </a>
-            </li><li routerlinkactive="active" class="">
-                <a href="#/user">
-                    
-                    <p>User Profile</p>
-                </a>
-            </li><li routerlinkactive="active" class="">
-                <a href="#/table">
-                    
-                    <p>Table List</p>
-                </a>
-            </li><li routerlinkactive="active" class="">
-                <a href="#/typography">
-                    
-                    <p>Typography</p>
-                </a>
-            </li><li routerlinkactive="active" class="">
-                <a href="#/icons">
-                    
-                    <p>Icons</p>
-                </a>
-            </li><li routerlinkactive="active" class="">
-                <a href="#/maps">
-                    
-                    <p>Maps</p>
-                </a>
-            </li><li routerlinkactive="active" class="">
-                <a href="#/notifications">
-                    
-                    <p>Notifications</p>
-                </a>
-            </li><li routerlinkactive="active" class="active-pro">
-                <a href="#/upgrade">
-                    
-                    <p>Upgrade to PRO</p>
-                </a>
-            </li>
-        </ul>
-    <div class="moving-tab" style="width: 230px; transform: translate3d(0px, 20px, 0px); transition: all 0.5s cubic-bezier(0.29, 1.42, 0.79, 1);">
-                    <p>Dashboard</p>
-                </div></div>
-</div>
-</sidebar-cmp>
-        <div class="sidebar-background" style="background-image: url(../assets/img/sidebar-4.jpg)"></div>
-    </div>
 		<div class="row">
 			<div class="col-md-12">
-				<h1><?php echo $title; ?></h1>
+				<!-- <h1><?php echo $title; ?></h1> -->
 				<hr>
-<?php if (Session::get_flash('success')): ?>
+		<?php if (Session::get_flash('success')): ?>
 				<div class="alert alert-success alert-dismissable">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					<p>
 					<?php echo implode('</p><p>', (array) Session::get_flash('success')); ?>
 					</p>
 				</div>
-<?php endif; ?>
-<?php if (Session::get_flash('error')): ?>
+		<?php endif; ?>
+			<?php if (Session::get_flash('error')): ?>
 				<div class="alert alert-danger alert-dismissable">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					<p>
 					<?php echo implode('</p><p>', (array) Session::get_flash('error')); ?>
 					</p>
 				</div>
-<?php endif; ?>
+			<?php endif; ?>
 			</div>
-			<div class="col-md-12">
-<?php echo $content; ?>
+			<div class="col-md-2">
+				<div class="well"><h3>LMS</h3></div>
+				<!-- Side bar -->
+				<div class="bar-main">
+					<div class="bar-element active">
+						<a href="#" class="li-element">DONT</a>
+					</div>
+					<div class="bar-element">
+						<a href="#" class="li-element">ACT</a>
+						<p class="sm-noti">1</p>
+					</div>
+					<div class="bar-element">
+						<a href="#" class="li-element">LIKE</a>
+						<p class="sm-noti">1</p>
+					</div>
+					<div class="bar-element">
+						<a href="#" class="li-element">IT'S</a>
+						<p class="sm-noti">1</p>
+					</div>
+					<div class="bar-element">
+						<a href="#" class="li-element">A</a>
+					</div>
+					<div class="bar-element">
+						<a href="#" class="li-element">BAD</a>
+					</div>
+					<div class="bar-element">
+						<a href="#" class="li-element">THING</a>
+					</div>
+					<div class="bar-element">
+						<a href="#" class="li-element">TO</a>
+					</div>
+					<div class="bar-element">
+						<a href="#" class="li-element">FALL</a>
+					</div>
+					<div class="bar-element">
+						<a href="#" class="li-element">IN</a>
+					</div>
+					<div class="bar-element">
+						<a href="#" class="li-element">LOVE</a>
+					</div>
+					<div class="bar-element">
+						<a href="#" class="li-element">WITH</a>
+					</div>
+					<div class="bar-element">
+						<a href="#" class="li-element">ME</a>
+					</div>
+				</div>
+				<!-- Side bar -->
+			</div>
+			<div class="col-md-10" style="margin-top: 3%;">
+				<?php echo $content; ?>
 			</div>
 		</div>
 		<hr/>
