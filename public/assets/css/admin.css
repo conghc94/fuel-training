@@ -2,9 +2,11 @@
 	font-size: 30px;
 	padding-top: 40px;
 }
+
 .avatar {
-	margin-left: 20px;
+  border: 1px solid #979797;
 }
+
 .user-name {
 	margin-bottom: 100px;
 }
@@ -136,4 +138,21 @@ div.active {
   background-color: #979797;
   color: white;
   float: right;
+}
+.tablinks {
+  background-color: #979797;
+  color: white;
+
+}
+li.active {
+  background-color: white;
+}
+
+.tutorial {
+    height: 80px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 2px solid #979797;
+    border-radius: 6px;
 }

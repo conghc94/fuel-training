@@ -27,15 +27,17 @@
     <li><a type="button" class="tablinks" onclick="openTab(event, 'Paris')" href="#">Menu 1</a></li>
     <li><a type="button" class="tablinks" onclick="openTab(event, 'Tokyo')" href="#">Menu 2</a></li>
  </ul>
-<div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'tab-1')">London</button>
-  <button class="tablinks" onclick="openTab(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openTab(event, 'Tokyo')">Tokyo</button>
-</div>
+
 <div class="row">
   	<div id="tab-1" class="tabcontent" style="display: block;">
   		<div class="row">
-  			<div class="col-md-3 col-md-offset-9 form-inline">
+
+  			<div class="col-md-5">
+  				<img src="../assets/img/panda.png" class="avatar col-md-2" alt="" width="80" height="80">
+  				<div class="col-md-6 col-md-offset-1 tutorial">Some thing</div>
+  			</div>
+
+  			<div class="col-md-3 col-md-offset-4 form-inline">
 				<div class="col-md-6">
 					<select class="form-control" name="year">
 						<option>2017</option>
@@ -47,7 +49,6 @@
 						<option>6</option>
 					</select>
 				</div>
-				
 			</div>
   		</div>
   		<!-- User list -->
@@ -56,8 +57,8 @@
   		<?php foreach ($users as $user) { ?>
 			<div class="row">
 				<div class="col-xs-1 number-circle"><?php echo $i++; ?></div>
-				<div class="col-xs-3 avatar">
-					<img src='../assets/img/<?php echo $user->avatar;?>' alt="" width="200" height="200">
+				<div class="col-xs-3">
+					<img class="avatar" src='../assets/img/<?php echo $user->avatar;?>' alt="" width="200" height="200">
 				</div>
 				<div class="col-xs-3">
 					<h3 class="user-name"><?php echo $user->name; ?></h3>
@@ -102,13 +103,14 @@
 	    // Get all elements with class="tablinks" and remove the class "active"
 	    tablinks = document.getElementsByClassName("tablinks");
 	    for (i = 0; i < tablinks.length; i++) {
-	        tablinks[i].className = tablinks[i].className.replace(" active", "");
+	        // tablinks[i].className = tablinks[i].className.replace(" active", "");
+	        tablinks[i].parentElement.className = tablinks[i].parentElement.className.replace("active", "");
 	    }
 
 	    // Show the current tab, and add an "active" class to the button that opened the tab
 	    document.getElementById(cityName).style.display = "block";
-	    evt.currentTarget.className += " active";
-	    evt.currentTarget.parentElement.className += " active";
+	    // evt.currentTarget.className += " active";
+	    evt.currentTarget.parentElement.className += "active";
 
 	}
 </script>
